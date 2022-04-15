@@ -3,6 +3,7 @@ from PIL import ImageFont
 from PIL import ImageDraw
 letters = ["A","B","C","Ç","D","E","F","G","Ğ","H","I","İ","J","K","L","M","N","N","O","Ö","P","Q","R","S","Ş","T","U","Ü","X","W","V","Y","Z"," "]
 
+
 def makepng(letters=letters):
     global makepng
     for i in letters:

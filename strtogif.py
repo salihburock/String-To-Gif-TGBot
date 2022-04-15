@@ -3,8 +3,8 @@ import os
 import imageio
 from makepng import makepng
 import subprocess as sp
-
-bot = telebot.TeleBot('API-KEY-HERE')
+api_key = open('api','r+').read()
+bot = telebot.TeleBot(api_key)
 def makegif(list=[],duration=5):
     strout = []
     for i in list:
