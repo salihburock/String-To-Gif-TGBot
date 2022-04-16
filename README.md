@@ -3,5 +3,5 @@
 2. Copy the API Token
 3. Run setup.py and paste the API Token
 4. Wait for it to download required modules
-5. Run strtogif.py
+5. Run bot.py
 6. Send /start to your telegram bot for instructions of how to use it
