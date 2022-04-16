@@ -10,7 +10,7 @@ def makegif(list=[],duration=5):
     strout = []
     flist = []
     for i in list:
-        i = f'Letters\\{i}.png'
+        i = f'Images\\{i}.png'
         flist.append(i)
     list = flist
     for i in range(len(list)):
@@ -19,8 +19,8 @@ def makegif(list=[],duration=5):
     images = []
     for filename in strout:
         images.append(imageio.imread(filename))
-    imageio.mimsave('Letters\\result.gif', images)
-    os.chdir('Letters\\')
+    imageio.mimsave('Images\\result.gif', images)
+    os.chdir('Images\\')
     for img in os.listdir():
         if img.endswith('g') and img != "blank.png":
             sp.run(f'DEL "{img}"',shell=True)
@@ -56,7 +56,7 @@ Usage:
         if inpt != "♦":
             bot.reply_to(message=message, text="Making gif...")
         makegif(list(inpt), duration=inpt2)
-        bot.send_animation(message.chat.id, open('Letters\\result.gif', 'rb'))
+        bot.send_animation(message.chat.id, open('Images\\result.gif', 'rb'))
     except IndexError:
         if inpt != "♦":
             bot.send_message(message.chat.id,text='You can specify duration at the 3rd line')
@@ -64,7 +64,7 @@ Usage:
         if inpt != "♦":
             bot.reply_to(message=message, text="Making gif...")
         makegif(list(inpt), duration=inpt2)
-        bot.send_animation(message.chat.id, open('Letters/result.gif', 'rb'))
+        bot.send_animation(message.chat.id, open('Images/result.gif', 'rb'))
     except ValueError:
         bot.send_message(message.chat.id,text='Please use an integer(number) as duration.')
     
@@ -72,7 +72,7 @@ Usage:
 @bot.message_handler(commands=['test'])
 def test(message):
     makegif('test')
-    bot.send_animation(message.chat.id, open('Letters\\result.gif', 'rb'))
+    bot.send_animation(message.chat.id, open('Images\\result.gif', 'rb'))
 
 print("Bot Started")
 bot.polling(none_stop=True,timeout=None)

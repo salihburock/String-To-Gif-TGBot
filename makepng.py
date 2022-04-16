@@ -6,8 +6,8 @@ letters = ["A","B","C","Ç","D","E","F","G","Ğ","H","I","İ","J","K","L","M","N
 def makepng(letters=letters):
     global makepng
     for i in letters:
-        img = Image.open("Letters\\blank.png").convert("RGBA")
+        img = Image.open("Images\\blank.png").convert("RGBA")
         draw = ImageDraw.Draw(img)
         draw.rectangle(((0, 0), (500, 500)), fill="black")
-        draw.text(xy=(0, 50), text=i, font=ImageFont.truetype("Letters\\font.TTF",size=500),stroke_width=0)
-        img.save(f'Letters\{i}.png')
+        draw.text(xy=(0, 50), text=i, font=ImageFont.truetype("Images\\font.TTF",size=500),stroke_width=0)
+        img.save(f'Images\{i}.png')
